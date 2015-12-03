@@ -58,3 +58,5 @@ gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 
 gem 'devise'
+
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
