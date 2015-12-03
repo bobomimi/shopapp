@@ -1,20 +1,13 @@
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/listings">shop</a>
-  </div>
+  
 
+  <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><%= link_to "About", pages_about_path %></li>
-      <li><%= link_to "Contact", pages_contact_path %></li>
-    </ul>
+
+      
+     
+    
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li class="dropdown">
@@ -37,6 +30,25 @@
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Sign In", new_user_session_path %></li>
       <% end %>
+      <ul class="nav navbar-nav">
+        <li>         </li>
+        <li>         </li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "צור קשר", pages_contact_path %></li>
+        <li><%= link_to "על החנות", pages_about_path %></li>
+      </ul>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="/">הגנה עצמית</a>
+      </div>
+      
     </ul>
+    
   </div><!-- /.navbar-collapse -->
 </nav>
