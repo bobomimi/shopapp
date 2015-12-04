@@ -19,6 +19,13 @@ he:
     sign_out: התנתק/י
     sign_up: להירשם
     sign_in: התחבר/י
+  purchase:
+    your_purchase_history: היסטורית הרכישות שלך
+    image: תמונה
+    item: פריט
+    price: מחיר
+    seller: מוכר
+    date_purchased: תאריך רכישה
 
 
   date:

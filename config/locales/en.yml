@@ -19,3 +19,10 @@ en:
     sign_out:  Sign Out
     sign_up:  Sign Up
     sign_in:  Sign In
+  purchase:
+    your_purchase_history: Your Purchase History
+    image: Image
+    item: Item
+    price: Price
+    seller: Seller
+    date_purchased: Date Purchased

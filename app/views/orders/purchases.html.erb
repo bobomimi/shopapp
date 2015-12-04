@@ -1,14 +1,14 @@
 <div class="center">
-  <h2>Your Purchase History</h2>
+  <h2><%= t("purchase.your_purchase_history") %></h2>
 </div>
 
 <table class="table table-striped table-bordered">
   <tr>
-    <th class="center">Image</th>
-    <th class="center">Item</th>
-    <th class="center">Price</th>
-    <th class="center">Seller</th>
-    <th class="center">Date Purchased</th>
+    <th class="center"><%= t("purchase.image") %></th>
+    <th class="center"><%= t("purchase.item") %></th>
+    <th class="center"><%= t("purchase.price") %></th>
+    <th class="center"><%= t("purchase.seller") %></th>
+    <th class="center"><%= t("purchase.date_purchased") %></th>
   </tr>
 
   <% @orders.each do |order| %>
