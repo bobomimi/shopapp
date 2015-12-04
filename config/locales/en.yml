@@ -1,23 +1,21 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  new_listing: New Listing
+  sold_by : Sold by %{user}
+  jumbotron_title_html: <h1>Self defense products <br> from around the world. </ H1>
+  jumbotron_subtitle_html: <h2>Live without fear</h2>
+  navbar:
+    shop: Shop
+    about: about
+    contact: Contact
+    language: Language
+    hebrew: Hebrew
+    english: English
+    categories: Categories
+    seller_account: Seller Account
+    manage_listings: Manage Listings
+    sales_history: Sales History
+    purchase_history:  Purchase History
+    edit_profile:  Edit Profile
+    sign_out:  Sign Out
+    sign_up:  Sign Up
+    sign_in:  Sign In
