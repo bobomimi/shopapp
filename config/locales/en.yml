@@ -1,8 +1,9 @@
 en:
   new_listing: New Listing
   sold_by : Sold by %{user}
-  jumbotron_title_html: <h1>Self defense products <br> from around the world. </ H1>
-  jumbotron_subtitle_html: <h2>Live without fear</h2>
+  header_title_html: <h1>Self defense products  </ H1>
+  header_subtitle_html: <h2>Live without fear</h2>
+  header_botton_html: Find Out
   navbar:
     my_store: My Store
     shop: Shop
@@ -30,3 +31,13 @@ en:
   navbar_customer:
     sign_up: Sign Up
     sign_in: Sign Ip
+  order:
+    address: Address
+    city: City
+    credit_card_number: Credit Card Number
+    cvc: CVC
+    expiration_date: Expiration Date
+    complete_order: Complete Order
+  listing:
+    buy_it_now: Buy It Now
+    back: Back

@@ -27,11 +27,11 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :address %>
+        <%= f.label t("order.address") %>
         <%= f.text_field :address, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :city %>
+        <%= f.label t("order.city") %>
         <%= f.text_field :city, class: "form-control" %>
       </div>
       <div class="form-group">
@@ -42,17 +42,17 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-8">
-            <%= label_tag :card_number, "Credit Card Number" %>
+            <%= label_tag :card_number, t("order.credit_card_number") %>
             <%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %>
           </div>
           <div class="col-md-4">
-            <%= label_tag :card_code, "CVC" %>
+            <%= label_tag :card_code, t("order.cvc") %>
             <%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %>
           </div>
         </div>
       </div>
       <div class="form-group">
-        <%= label_tag nil, "Expiration Date" %>
+        <%= label_tag nil, t("order.expiration_date") %>
         <div class="row">
           <div class="col-md-3">
             <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "exp-month", class: "form-control" } %>
@@ -64,7 +64,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.submit "Complete Order", class: "btn btn-primary" %>
+        <%= f.submit t("order.complete_order"), class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>

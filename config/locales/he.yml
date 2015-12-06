@@ -1,8 +1,9 @@
 he:
   new_listing: מוצר חדש
   sold_by: נמכר על ידי %{user}
-  jumbotron_title_html: <h1>מוצרים להגנה עצמית מרחבי העולם</h1>
-  jumbotron_subtitle_html: <h2>לחיות בלי פחד</h2>
+  header_title_html: מפחד לצאת מהבית
+  header_subtitle_html: רוצה להרגיש מוגן
+  header_botton_html: גלה עוד
   navbar:
     my_store: החנות שלי
     shop: חנות
@@ -30,7 +31,16 @@ he:
   navbar_customer:
     sign_up: הירשם
     sign_in: התחבר
-
+  order:
+    address: כתובת
+    city: עיר
+    credit_card_number: מספר כרטיס אשראי
+    cvc: 3 ספרות אחרונות
+    expiration_date: תאריך תפוגה
+    complete_order: בצע/י הזמנה
+  listing:
+    buy_it_now: לקנות את המוצר ?
+    back: לדף הבית
 
   date:
     abbr_day_names:
