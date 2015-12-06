@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|he/ do
+      devise_for :customers
+
     resources :categories
     devise_for :users
     resources :listings do
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
 
     root 'listings#index'
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

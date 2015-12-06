@@ -4,6 +4,7 @@ en:
   jumbotron_title_html: <h1>Self defense products <br> from around the world. </ H1>
   jumbotron_subtitle_html: <h2>Live without fear</h2>
   navbar:
+    my_store: My Store
     shop: Shop
     about: about
     contact: Contact
@@ -18,7 +19,7 @@ en:
     edit_profile:  Edit Profile
     sign_out:  Sign Out
     sign_up:  Sign Up
-    sign_in:  Sign In
+    sign_in_admin:  Sign In Admin
   purchase:
     your_purchase_history: Your Purchase History
     image: Image
@@ -26,3 +27,6 @@ en:
     price: Price
     seller: Seller
     date_purchased: Date Purchased
+  navbar_customer:
+    sign_up: Sign Up
+    sign_in: Sign Ip

@@ -1,5 +1,73 @@
-<nav dir="rtl" class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    
+      <% if customer_signed_in? %>
+        
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_customer.name %> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to t("navbar.purchase_history"), purchases_path %></li>
+            <li><%= link_to t("navbar.edit_profile"), edit_customer_registration_path %></li>
+            <li><%= link_to t("navbar.sign_out"), destroy_customer_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to t("navbar_customer.sign_up"), new_customer_registration_path %></li>
+        <li><%= link_to t("navbar_customer.sign_in"), new_customer_session_path %></li>
+      <% end %>
+      
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("navbar.categories") %><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% Category.all.each do |category| %>
+              <li><%= link_to category.name, listings_path(category: category.name) %></li>
+            <% end %>
+          </ul>
+        </li>
+                    <li>
+                        <%= link_to t("navbar.about"), pages_about_path %>
+                    </li>
+                    <li>
+                        
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#products">מוצרים</a>
+                    </li>
+
+                    <li>
+                      <%= link_to t("navbar.contact"), pages_contact_path %>
+                    </li>
+                    <li>
+                        
+                    </li>
+
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                      <i class="fa fa-play-circle"></i>  <span class="light"></span><%= t("navbar.my_store") %>
+                    </a>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav> 
+
+ 
+    <!--<nav dir="rtl" class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -10,7 +78,6 @@
     <%= link_to t("navbar.shop"), root_path, class: "navbar-brand" %>
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><%= link_to t("navbar.about"), pages_about_path %></li>
@@ -50,15 +117,30 @@
           </ul>
         </li>
       <% else %>
-        <li><%= link_to t("navbar.sign_up"), new_user_registration_path %></li>
-        <li><%= link_to t("navbar.sign_in"), new_user_session_path %></li>
+        <li><%= link_to t("navbar.sign_in_admin"), new_user_session_path %></li>
       <% end %>
     </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+    
 
+    <ul class="nav navbar-nav navbar-right">
+      <% if customer_signed_in? %>
+        
 
-
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_customer.name %> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to t("navbar.purchase_history"), purchases_path %></li>
+            <li><%= link_to t("navbar.edit_profile"), edit_customer_registration_path %></li>
+            <li><%= link_to t("navbar.sign_out"), destroy_customer_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to t("navbar_customer.sign_up"), new_customer_registration_path %></li>
+        <li><%= link_to t("navbar_customer.sign_in"), new_customer_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>-->
 
 
 

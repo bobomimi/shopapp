@@ -4,6 +4,7 @@ he:
   jumbotron_title_html: <h1>מוצרים להגנה עצמית מרחבי העולם</h1>
   jumbotron_subtitle_html: <h2>לחיות בלי פחד</h2>
   navbar:
+    my_store: החנות שלי
     shop: חנות
     about: על החנות
     contact: צור קשר
@@ -18,7 +19,7 @@ he:
     edit_profile: עריכת פרופיל
     sign_out: התנתק/י
     sign_up: להירשם
-    sign_in: התחבר/י
+    sign_in_admin: התחבר/י ניהול
   purchase:
     your_purchase_history: היסטורית הרכישות שלך
     image: תמונה
@@ -26,6 +27,9 @@ he:
     price: מחיר
     seller: מוכר
     date_purchased: תאריך רכישה
+  navbar_customer:
+    sign_up: הירשם
+    sign_in: התחבר
 
 
   date:
