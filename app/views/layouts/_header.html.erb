@@ -16,6 +16,9 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <li>
+                      <%= link_to t("navbar.contact"), pages_contact_path %>
+                    </li>
                     
       <% if customer_signed_in? %>
         
@@ -51,9 +54,7 @@
                         <a class="page-scroll" href="#products">מוצרים</a>
                     </li>
 
-                    <li>
-                      <%= link_to t("navbar.contact"), pages_contact_path %>
-                    </li>
+                    
                     <li>
                         
                     </li>
