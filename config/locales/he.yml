@@ -41,6 +41,17 @@ he:
   listing:
     buy_it_now: לקנות את המוצר ?
     back: לדף הבית
+  seller:
+    image: תמונה
+    name: שם
+    description: תיאור
+    price: מחיר
+    action: פעולות
+    action_button: פעולות
+    view: הצג
+    edit: ערוך
+    destroy: מחק
+    new_listing: מוצר חדש
 
   date:
     abbr_day_names:

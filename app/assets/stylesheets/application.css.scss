@@ -224,7 +224,7 @@ body{overflow-x:hidden;font-family:"Roboto Slab","Helvetica Neue",Helvetica,Aria
 
 
 body{
-  .a1 {
+  .listing_show {
     padding-top: 10em;
   }
 
@@ -238,4 +238,24 @@ body{
   .order_new {
     padding-top: 10em
   }
+
+  .listing_seller {
+    padding-top: 10em;
+    .center {
+      background-color: #FFD300;
+    }
+    h5, h6 {
+      color: black;
+      font-family: guardian-egyptt, georgia, serif;
+    }
+  }
+
+  .order_purchases {
+    padding-top: 10em
+  }
+
+  .order_sales {
+    padding-top: 10em
+  }
+
 }

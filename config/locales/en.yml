@@ -41,3 +41,14 @@ en:
   listing:
     buy_it_now: Buy It Now
     back: Back
+  seller:
+    image: Image
+    name: Name
+    description: Description
+    price: Price
+    action: Action
+    action_button: Action
+    view: View
+    edit: Edit
+    destroy: Destroy
+    new_listing: New Listing
