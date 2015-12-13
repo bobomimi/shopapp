@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	#products {
+	    .center {
+	        .row {
+	            .col-md-3 {
+	                .thumbnail {
+	                background-color: #FAEBD7;
+	                    width: 230px;
+	                    height: 320px;
+	                    
+	                }
+	            }
+	        }
+    	}
+    }
+}
