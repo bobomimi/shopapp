@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
     get "pages/about"
     get "pages/contact"
+    get "pages/thank_you"
     get 'seller' => "listings#seller"
     get 'sales' => "orders#sales"
     get 'purchases' => "orders#purchases"

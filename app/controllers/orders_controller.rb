@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_customer!
+
+
 
   def sales
     @orders = Order.all.where(seller: current_user).order("created_at DESC")
@@ -39,10 +42,14 @@ class OrdersController < ApplicationController
     rescue Stripe::CardError => e
       flash[:danger] = e.message
     end
+
+    
+    ThankYou.thank_you(@order).deliver
+
     
     respond_to do |format|
       if @order.save
-        format.html { redirect_to root_url, notice: "Thanks for ordering!" }
+        format.html { redirect_to pages_thank_you_url }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
@@ -52,6 +59,8 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
@@ -59,6 +68,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:address, :city, :state)
+      params.require(:order).permit(:address, :city, :state, :name,:country, :street_address,:zip_postal_code,:tel_mobile, :email
+)
     end
 end
