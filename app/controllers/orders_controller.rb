@@ -44,7 +44,6 @@ class OrdersController < ApplicationController
     end
 
     
-    ThankYou.thank_you(@order).deliver
 
     
     respond_to do |format|

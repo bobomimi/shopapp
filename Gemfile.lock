@@ -208,6 +208,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  mail
   paperclip (~> 4.3)
   paperclip-dropbox (>= 1.1.7)
   pg
