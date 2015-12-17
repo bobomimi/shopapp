@@ -8,11 +8,17 @@
 
             <%= f.label :email %><br>
             <%= f.email_field :email, required: true, class: "form-control" %>
+            <br>
+
+            <%= f.label :mobile_phone %>
+            <%= f.text_field :mobile_phone, class: "form-control"  %>
 
             <br>
 
             <%= f.label :message %>
             <%= f.text_area :message, as: :text, class: "form-control"  %>
+
+
 
             <%= f.submit 'Send Message', class: "btn btn-xl" %>
             <% end %>
