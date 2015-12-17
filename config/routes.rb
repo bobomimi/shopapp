@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|he/ do
       devise_for :customers
-
+    resources :contacts, only: [:new, :create]
     resources :categories
     devise_for :users
     resources :listings do

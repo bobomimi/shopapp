@@ -40,7 +40,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("navbar.categories") %><b class="caret"></b></a>
           <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
-              <li><%= link_to category.name, listings_path(category: category.name) %></li>
+              <li><a href="#products"><%= link_to category.name, listings_path(category: category.name)%></a></li>
             <% end %>
           </ul>
         </li>
@@ -59,7 +59,7 @@
                         
                     </li>
 
-                    <a class="navbar-brand page-scroll" href="#page-top">
+                    <a class="navbar-brand page-scroll" href="/listings#products">
                       <i class="fa fa-play-circle"></i>  <span class="light"></span><%= t("navbar.my_store") %>
                     </a>
                 </ul>

@@ -1,0 +1,20 @@
+ <div class= "a2">
+    <div class="form-group">
+        <%= form_for @contact do |f| %>
+            <%= f.label :name, required: true %>
+            <%= f.text_field :name, required: true, class: "form-control" %>
+
+            <br>
+
+            <%= f.label :email %><br>
+            <%= f.email_field :email, required: true, class: "form-control" %>
+
+            <br>
+
+            <%= f.label :message %>
+            <%= f.text_area :message, as: :text, class: "form-control"  %>
+
+            <%= f.submit 'Send Message', class: "btn btn-xl" %>
+            <% end %>
+            </div>
+</div>

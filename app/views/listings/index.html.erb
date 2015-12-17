@@ -1,9 +1,3 @@
-<!--<div class="jumbotron">
-  <%= t('jumbotron_title_html') %>
-  <%= t('jumbotron_subtitle_html') %>
-</div>-->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,20 +10,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Grayscale - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/grayscale.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,125 +32,40 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
 
     
 
-    <!-- Header -->
-    <header>
-        <div class="container">
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in"><%= t("header_title_html") %></div>
                 <div class="intro-heading"><%= t("header_subtitle_html") %></div>
-                <a href="#products" class="page-scroll btn btn-xl"><%= t("header_botton_html") %></a>
+                <a href="#about" class="btn btn-default btn-lg"><%= t("header_botton_html") %></a>
             </div>
+        </div>
         </div>
     </header>
 
-
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download Grayscale</h2>
+                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+                    <a href="#products" class="btn btn-default btn-lg">Visit Download Page</a>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://www.hug.co.il/ifiles/45224a.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                            
-                        </div>
-                        <img src="http://www.hug.co.il/ifiles/45224a.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://www.hug.co.il/ifiles/45224a.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://www.hug.co.il/ifiles/45224a.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://www.hug.co.il/ifiles/45224a.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="http://www.hug.co.il/ifiles/45224a.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
+   
 
-<section id="products">
-      <div class="center">
+    <!-- Contact Section -->
+    <section id="products" class="container content-section text-center">
+        <div class="center">
         <div class="row">
           <% @listings.each do |listing| %>
             <div class="col-md-3">
@@ -175,60 +82,16 @@
         </div>
       </div>
     </section>
-                
 
-<div class="jumbotron">
-<div class="center">
-  <nav dir="rtl" class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+    <!-- Map Section -->
+    <div id="map"></div>
 
-  </div>
-
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <% if user_signed_in? %>
-  <li><%= link_to t('new_listing'), new_listing_path, data: { no_turbolink: true } %></li>
-  <% end %>
-<% if user_signed_in? %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("navbar.seller_account") %><b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to t("navbar.manage_listings"), seller_path %></li>
-            <li><%= link_to t("navbar.sales_history"), sales_path %></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to t("navbar.purchase_history"), purchases_path %></li>
-            <li><%= link_to t("navbar.edit_profile"), edit_user_registration_path %></li>
-            <li><%= link_to t("navbar.sign_out"), destroy_user_session_path, method: :delete, class: "btn btn-primary", data: { no_turbolink: true }  %></li>
-          </ul>
-        </li>
-      <% else %>
-        <li><%= link_to t("navbar.sign_in_admin"),user_session_path %></li>
-      <% end %>
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("navbar.language") %><b class="caret"></b></a>
-          <ul class="dropdown-menu">
-              <li><%= link_to t('navbar.hebrew'), root_path(locale: 'he') %></li>
-              <li><%= link_to t('navbar.english'), root_path(locale: 'en') %></li>
-          </ul>
-        </li>
-    </ul>
-  </div>
-</nav>
-  
-      </div>
-</div>
-    
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -237,18 +100,28 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+    <script src="js/grayscale.js"></script>
 
 </body>
 
-</html> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
