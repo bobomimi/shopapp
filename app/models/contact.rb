@@ -6,7 +6,7 @@ class Contact < MailForm::Base
 	def headers 
 		{
 		  :subject => "Contact Form",
-		  :to => "boaz242@gmail.com",
+		  :to => "ENV['SENDGRID_USERNAME']",
 		  :from => %("#{name} <#{email}>")
 	    }
 	end
