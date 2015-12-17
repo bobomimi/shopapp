@@ -6,7 +6,7 @@ class Contact < MailForm::Base
 	def headers 
 		{
 		  :subject => "Contact Form",
-		  :to => "ENV['SENDGRID_USERNAME']",
+		  :to => "app44585595@heroku.com']",
 		  :from => %("#{name} <#{email}>")
 	    }
 	end
