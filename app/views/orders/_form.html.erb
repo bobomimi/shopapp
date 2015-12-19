@@ -24,13 +24,7 @@
                 <div class="row">
                     <p></p>
                 </div>
-                <div class="row">
-                    <div style="display: table; margin: auto;">
-                        <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
-                        <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
-                        <span class="step_thankyou check-bc step_complete">Thank you</span>
-                    </div>
-                </div>
+               
                 <div class="row">
                     <p></p>
                 </div>
@@ -39,6 +33,8 @@
             <div class="row cart-body">
                 <form class="form-horizontal" method="post" action="">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+
+                    
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -70,7 +66,60 @@
                     </div>
 
                     <!--REVIEW ORDER END-->
-                   
+                   <!--CREDIT CART PAYMENT-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong style="color:black;">Card Type:</strong></div>
+                                <div class="col-md-12">
+                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong style="color:black;"><%= t("order.credit_card_number") %></strong></div>
+                                <div class="col-md-12"><%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong style="color:black;"><%= t("order.cvc") %></strong></div>
+                                <div class="col-md-12"><%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <strong style="color:black;"><%= t("order.expiration_date") %></strong>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "exp-month", class: "form-control" } %>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'data-stripe' => "exp-year", class: "form-control" } %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span>Pay secure using your credit card.</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <ul class="cards">
+                                        <li class="visa hand">Visa</li>
+                                        <li class="mastercard hand">MasterCard</li>
+                                        <li class="amex hand">Amex</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.submit t("order.complete_order"), class: "btn btn-primary btn-submit-fix" %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                     <!--SHIPPING METHOD-->
@@ -132,60 +181,7 @@
                         </div>
                     </div>
                     <!--SHIPPING METHOD END-->
-                    <!--CREDIT CART PAYMENT-->
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Card Type:</strong></div>
-                                <div class="col-md-12">
-                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
-                                        <option value="5">Visa</option>
-                                        <option value="6">MasterCard</option>
-                                        <option value="7">American Express</option>
-                                        <option value="8">Discover</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"><%= t("order.credit_card_number") %></strong></div>
-                                <div class="col-md-12"><%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"><%= t("order.cvc") %></strong></div>
-                                <div class="col-md-12"><%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <strong style="color:black;"><%= t("order.expiration_date") %></strong>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "exp-month", class: "form-control" } %>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'data-stripe' => "exp-year", class: "form-control" } %>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <span>Pay secure using your credit card.</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <ul class="cards">
-                                        <li class="visa hand">Visa</li>
-                                        <li class="mastercard hand">MasterCard</li>
-                                        <li class="amex hand">Amex</li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <%= f.submit t("order.complete_order"), class: "btn btn-primary btn-submit-fix" %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <% end %>
                     <!--CREDIT CART PAYMENT END-->
                 </div>
