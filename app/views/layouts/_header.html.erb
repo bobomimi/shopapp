@@ -23,11 +23,12 @@
                     <li><%= link_to t("navbar_customer.sign_up"), new_customer_registration_path %></li>
                     <li><%= link_to t("navbar_customer.sign_in"), new_customer_session_path %></li>
                     <% end %>
+
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("navbar.categories") %><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     <% Category.all.each do |category| %>
-                    <li><a href="#products"><%= link_to category.name, listings_path(category: category.name)%></a></li>
+                    <li><%= link_to category.name, listings_path(category: category.name), {:action => "index", :controller => "listing", :anchor => "portfolio" }%></li>
                     <% end %>
                     </ul>
                     </li>
