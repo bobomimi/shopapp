@@ -18,7 +18,7 @@
       <% if current_user == @listing.user %>
   <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-primary" %> 
 <% end %>
-<%= link_to t('listing.back'), listings_path, class: "btn btn-primary" %>
+<%= link_to t('listing.back'), root_path, class: "btn btn-primary" %>
 </div>
 </div>
 
