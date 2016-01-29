@@ -35,7 +35,8 @@ he:
     address: כתובת
     city: עיר
     credit_card_number: מספר כרטיס אשראי
-    cvc: 3 ספרות אחרונות
+    cvc: 3 ספרות בגב הכרטיס
+    secure_payment: תשלום מאובטח
     expiration_date: תאריך תפוגה
     complete_order: בצע/י הזמנה
   listing:
@@ -60,6 +61,26 @@ he:
     phone: פלאפון *
     email: אימייל *
     name: שם *
+  signin:
+    sign_in: התחבר/י
+    email: אימייל
+    password: סיסמא
+    login_with_facebook: התחבר/י עם פייסבוק
+    dont_have_an_account: ?אין לך חשבון
+  shared_links:
+    sign_up: הירשם
+    forgot_your_password: ?שכחת את הסיסמא
+  order_form:
+    name: שם מלא
+    country: מדינה
+    street: רחוב
+    city: עיר
+    state:  אזור
+    zip_postal_code: מיקוד
+    tel_mobile: פלאפון
+    email: אימייל
+    address: כתובת
+    shipping_address: כתובת למשלוח
 
 
 

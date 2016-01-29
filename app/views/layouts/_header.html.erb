@@ -1,0 +1,77 @@
+<!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="glyphicon glyphicon-menu-hamburger
+"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="glyphicon glyphicon-remove"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >הגנה עצמית</a>
+            </li>
+            <% if customer_signed_in? %>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_customer.name %><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    <li><%= link_to t("navbar.purchase_history"), purchases_path %></li>
+                    <li><%= link_to t("navbar.edit_profile"), edit_customer_registration_path %></li>
+                    <li><%= link_to t("navbar.sign_out"), destroy_customer_session_path, method: :delete %></li>
+                    </ul>
+                    </li>
+                    <% else %>
+                    <li><%= link_to t("navbar_customer.sign_up"), new_customer_registration_path %></li>
+                    <li><%= link_to t("navbar_customer.sign_in"), new_customer_session_path %></li>
+            <% end %>
+            <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("navbar.categories") %><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    <% Category.all.each do |category| %>
+                    <li><%= link_to category.name, listings_path(category: category.name), {:action => "index", :controller => "listing", :anchor => "portfolio" }%></li>
+                    <% end %>
+                    </ul>
+                    </li>
+            <li>
+                <a href="/" onclick = $("#menu-close").click(); >דף הבית</a>
+            </li>
+            <li>
+            <a href="/pages/about" onclick = $("#menu-close").click();><%= t("navbar.about") %></a>
+            </li>
+            <li>
+                <a href="#services" onclick = $("#menu-close").click(); >שרותים</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >פרופיל</a>
+            </li>
+
+            <li>
+                <a href="/contacts/new" onclick = $("#menu-close").click();><%= t("navbar.contact") %></a>
+            </li>
+
+        </ul>
+    </nav>
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>

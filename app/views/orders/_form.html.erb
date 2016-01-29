@@ -1,3 +1,4 @@
+<body dir="rtl">
 
 <%= form_for([@listing, @order]) do |f| %>
       <% if @order.errors.any? %>
@@ -68,10 +69,10 @@
                     <!--REVIEW ORDER END-->
                    <!--CREDIT CART PAYMENT-->
                     <div class="panel panel-info">
-                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
+                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span><%= t('order.secure_payment')%> </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Card Type:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
                                     <select id="CreditCardType" name="CreditCardType" class="form-control">
                                         <option value="5">Visa</option>
@@ -82,12 +83,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"><%= t("order.credit_card_number") %></strong></div>
-                                <div class="col-md-12"><%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number", class: "form-control" } %></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
+                                <div class="col-md-12"><%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number",placeholder: t("order.credit_card_number"),class: "form-control" } %></div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"><%= t("order.cvc") %></strong></div>
-                                <div class="col-md-12"><%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc", class: "form-control" } %></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
+                                <div class="col-md-12"><%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc",placeholder:t("order.cvc"), class: "form-control" } %></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
@@ -102,20 +103,21 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <span>Pay secure using your credit card.</span>
+                                    <span></span>
                                 </div>
                                 <div class="col-md-12">
                                     <ul class="cards">
                                         <li class="visa hand">Visa</li>
                                         <li class="mastercard hand">MasterCard</li>
                                         <li class="amex hand">Amex</li>
+                                        <%= f.submit t("order.complete_order"), class: "btn btn-primary btn-submit-fix" %>
                                     </ul>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <%= f.submit t("order.complete_order"), class: "btn btn-primary btn-submit-fix" %>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -124,59 +126,59 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                     <!--SHIPPING METHOD-->
                     <div class="panel panel-info">
-                        <div class="panel-heading"><strong style="color:black;">Address</strong></div>
+                        <div class="panel-heading"><strong style="color:black;"><%= t('order_form.address') %></strong></div>
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <h4>Shipping Address</h4>
+                                    <h4><%= t('order_form.shipping_address') %></h4>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Name:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
-                                    <%= f.text_field :name, class: "form-control" %>
+                                    <%= f.text_field :name, placeholder: t('order_form.name') , class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Country:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
-                                    <%= f.text_field :country, class: "form-control" %>
+                                    <%= f.text_field :country, placeholder: t('order_form.country') ,class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
                               <div class="col-md-12">
                               <div class="col-md-12">
-                                <strong style="color:black;">Street:</strong></div>
-                                    <%= f.text_field :street_address, class: "form-control" %>
+                                <strong style="color:black;"></strong></div>
+                                    <%= f.text_field :street_address,placeholder: t('order_form.street'), class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">City:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
-                                    <%= f.text_field :city, class: "form-control" %>
+                                    <%= f.text_field :city,placeholder: t("order_form.city"), class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">State:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
-                                    <%= f.text_field :state, class: "form-control" %>
+                                    <%= f.text_field :state,placeholder: t('order_form.state'), class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Zip / Postal Code:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
-                                    <%= f.text_field :zip_postal_code, class: "form-control" %>
+                                    <%= f.text_field :zip_postal_code,placeholder: t('order_form.zip_postal_code'), class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Phone Number:</strong></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
                                 <div class="col-md-12">
-                                  <%= f.text_field :tel_mobile, class: "form-control" %>
+                                  <%= f.text_field :tel_mobile,placeholder: t('order_form.tel_mobile'), class: "form-control" %>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;">Email Address:</strong></div>
-                                <div class="col-md-12"><%= f.text_field :email, class: "form-control" %></div>
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
+                                <div class="col-md-12"><%= f.text_field :email,placeholder:t('order_form.email'), class: "form-control" %></div>
                             </div>
                         </div>
                     </div>
@@ -198,4 +200,4 @@
       
       
 
-  
+  </body>

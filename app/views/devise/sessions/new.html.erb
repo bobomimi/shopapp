@@ -6,7 +6,7 @@
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
-                        <div class="panel-title">Sign In</div>
+                        <div  class="panel-title"><%= t("signin.sign_in") %></div>
                         <div style="float:right; font-size: 80%; position: relative; top:-10px"></div>
                     </div>     
 
@@ -19,12 +19,12 @@
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                        
-                                        <%= f.email_field :email, :autofocus => true, placeholder: "email" ,class: "form-control" %>                                        
+                                        <%= f.email_field :email, :autofocus => true, placeholder: t("signin.email") ,class: "form-control" %>                                        
                                     </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <%= f.password_field :password, placeholder: "password", class: "form-control" %>
+                                        <%= f.password_field :password, placeholder: t("signin.password"), class: "form-control" %>
                                     </div>
                                     
 
@@ -43,8 +43,8 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                      <%= f.submit "Sign_in", class: "btn btn-success" %>
-                                      <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                                      <%= f.submit t("signin.sign_in"), class: "btn btn-dark btn-lg" %>
+                                      <a id="btn-fblogin" href="#" class="btn btn-dark btn-lg"><%= t("signin.login_with_facebook") %></a>
 
                                     </div>
                                 </div>
@@ -53,7 +53,8 @@
                                 <div class="form-group">
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                            Don't have an account! 
+                                            <%= t("signin.dont_have_an_account") %> 
+                                            <br>
                                         <%= render "devise/shared/links" %>
 
 

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get 'sales' => "orders#sales"
     get 'purchases' => "orders#purchases"
 
-    root 'listings#index'
+    root 'pages#index'
   end
 
 

@@ -1,9 +1,23 @@
-// Place all the styles related to the Listings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.listing_show {
-  padding-top: 3em;
-  background-image:url(http://www.wallpaperup.com/uploads/wallpapers/2013/08/05/128071/45b8dc8019ff2f642788280bb43236f2.jpg);
-  
+.listing_show{
+	padding-top: 5em;
 }
+
+.listing_h2 {
+	color:black;
+}
+
+.row{
+	.col-md-3{
+	width:280px;
+	height:350px;
+
+	    thumbnail{ 
+	        .caption{
+
+	        }
+
+	    }
+	}
+}
+ 
+

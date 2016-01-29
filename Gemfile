@@ -61,3 +61,9 @@ gem 'mail'
 
 gem 'mail_form'
 
+
+
+gem 'omniauth-facebook'
+
+
+
