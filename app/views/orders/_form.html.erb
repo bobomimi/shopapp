@@ -1,7 +1,7 @@
 <body dir="rtl">
-
-<%= form_for([@listing, @order]) do |f| %>
+    <%= form_for([@listing, @order]) do |f| %>
       <% if @order.errors.any? %>
+
         <div id="error_explanation" class="alert alert-danger alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <h4><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h4>
@@ -34,9 +34,31 @@
             <div class="row cart-body">
                 <form class="form-horizontal" method="post" action="">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                <div class="container">
+    <div class="row form-group">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active"><a href="#step-1">
+                    <h4 class="list-group-item-heading">שלב 1</h4>
+                    <p class="list-group-item-text">תאור המוצר</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading">שלב 2</h4>
+                    <p class="list-group-item-text">כתובת למשלוח</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading">שלב 3</h4>
+                    <p class="list-group-item-text">תשלום מאובטח</p>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                <h1> המוצר שלך</h1>
 
-                    
-                    <!--REVIEW ORDER-->
+                <!--REVIEW ORDER-->
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
@@ -65,66 +87,16 @@
                             
                         </div>
                     </div>
-
-                    <!--REVIEW ORDER END-->
-                   <!--CREDIT CART PAYMENT-->
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span><%= t('order.secure_payment')%> </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"></strong></div>
-                                <div class="col-md-12">
-                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
-                                        <option value="5">Visa</option>
-                                        <option value="6">MasterCard</option>
-                                        <option value="7">American Express</option>
-                                        <option value="8">Discover</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"></strong></div>
-                                <div class="col-md-12"><%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number",placeholder: t("order.credit_card_number"),class: "form-control" } %></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong style="color:black;"></strong></div>
-                                <div class="col-md-12"><%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc",placeholder:t("order.cvc"), class: "form-control" } %></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <strong style="color:black;"><%= t("order.expiration_date") %></strong>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "exp-month", class: "form-control" } %>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'data-stripe' => "exp-year", class: "form-control" } %>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <span></span>
-                                </div>
-                                <div class="col-md-12">
-                                    <ul class="cards">
-                                        <li class="visa hand">Visa</li>
-                                        <li class="mastercard hand">MasterCard</li>
-                                        <li class="amex hand">Amex</li>
-                                        <%= f.submit t("order.complete_order"), class: "btn btn-primary btn-submit-fix" %>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                    <!--SHIPPING METHOD-->
+                <button id="activate-step-2" class="btn btn-dark btn-lg">לשלב 2</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> כתובת למשלוח</h1>
+                <h6 class="text-center">נא לוודא שהפרטים נכונים</h6>
+                <!--SHIPPING METHOD-->
                     <div class="panel panel-info">
                         <div class="panel-heading"><strong style="color:black;"><%= t('order_form.address') %></strong></div>
                         <div class="panel-body">
@@ -183,6 +155,89 @@
                         </div>
                     </div>
                     <!--SHIPPING METHOD END-->
+                    <button id="activate-step-3" class="btn btn-dark btn-lg">לשלב 3</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12 well">
+                <h1 class="text-center"> תשלום מאובטח</h1>
+                <h6 class="text-center">התשלום מתבצע דרך <a href="https://stripe.com/about" target="_blank">Stripe</a></h6>
+                <h6 class="text-center">הפרטים שלך לא נשמרים באתר שלנו</h6>
+                <!--CREDIT CART PAYMENT-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span><%= t('order.secure_payment')%> </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
+                                <div class="col-md-12">
+                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <% if @order.stripe_card_token.present? %>
+                              Credit card has been provided.
+                            <% else %>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
+                                <div class="col-md-12"><%= text_field_tag :card_number, nil, { :name => nil, :'data-stripe' => "number",placeholder: t("order.credit_card_number"),class: "form-control" } %></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong style="color:black;"></strong></div>
+                                <div class="col-md-12"><%= text_field_tag :card_code, nil, { :name => nil, :'data-stripe' => "cvc",placeholder:t("order.cvc"), class: "form-control" } %></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <strong style="color:black;"><%= t("order.expiration_date") %></strong>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <%= select_month nil, { use_two_digit_numbers: true }, { :name => nil, :'data-stripe' => "exp-month", class: "form-control" } %>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year+10 }, { :name => nil, :'data-stripe' => "exp-year", class: "form-control" } %>
+                                </div>
+                            </div>
+                            <% end %>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span></span>
+                                </div>
+                                <div class="col-md-12">
+                                    <ul class="cards">
+                                        <li class="visa hand">Visa</li>
+                                        <li class="mastercard hand">MasterCard</li>
+                                        <li class="amex hand">Amex</li>
+                                        <%= f.submit t("order.complete_order"), class: "btn btn-dark btn-lg btn-submit-fix" ,id: "koko"%>
+                                        <%= link_to 'Back', listing_path(@listing),class: "btn btn-dark btn-lg" ,id: "kuku"%>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    
+                    
+
+                    <!--REVIEW ORDER END-->
+                   
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                    
                     
                     <% end %>
                     <!--CREDIT CART PAYMENT END-->
