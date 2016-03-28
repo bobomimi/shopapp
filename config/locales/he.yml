@@ -1,8 +1,8 @@
 he:
   new_listing: מוצר חדש
   sold_by: נמכר על ידי %{user}
-  header_title_html: מפחד לצאת מהבית
-  header_subtitle_html: רוצה להרגיש מוגן
+  header_title_html: אתא יכול להגן על עצמך
+  header_subtitle_html: "? רוצה להרגיש מוגן"
   header_botton_html: גלה עוד
   navbar:
     my_store: החנות שלי
